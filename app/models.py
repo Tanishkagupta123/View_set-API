@@ -13,4 +13,10 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+class Employee(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    contact = models.CharField()
+    gender = models.CharField(max_length=10)
+    city = models.CharField(max_length=50)

@@ -36,7 +36,7 @@ class StudentViewSet(viewsets.ViewSet):
 
     def partial_update(self, request, pk=None):
         snippet = Student.objects.get(pk=pk)
-        serializer = StuSerializer(snippet, data=request.data)
+        serializer = StuSerializer(snippet, data=request.data,partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -46,3 +46,13 @@ class StudentViewSet(viewsets.ViewSet):
         snippet = self.get_object(pk)
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+# Short code
+
+# class StudentViewSet(viewsets.ModelViewSet):
+#     """
+#     A simple ViewSet for viewing and editing accounts.
+#     """
+#     queryset = Student.objects.all()
+#     serializer_class = StuSerializer
+    

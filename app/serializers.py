@@ -5,3 +5,8 @@ class StuSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = '__all__'
+
+class EmpSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = '__all__'
