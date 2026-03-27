@@ -48,10 +48,8 @@ class StudentViewSet(viewsets.ViewSet):
 
 # Short code
 
-# class StudentViewSet(viewsets.ModelViewSet):
-#     """
-#     A simple ViewSet for viewing and editing accounts.
-#     """
-#     queryset = Student.objects.all()
-#     serializer_class = StuSerializer
+class StudentViewSet(viewsets.ModelViewSet):
+
+    queryset = Student.objects.all()
+    serializer_class = StuSerializer
     
